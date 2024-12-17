@@ -28,3 +28,6 @@ brew install logrotate
 brew install htop
 brew install cloudflared
 brew install warp
+brew install wp-cli
+brew install --cask raycast
+brew install --cask rectangle
