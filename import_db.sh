@@ -1,9 +1,14 @@
 #!/bin/bash
 # chmod +x import_db.sh
 
-# Set MySQL username and password
-MYSQL_USER="root"
-MYSQL_PASSWORD="root"
+# Check if username and password are provided
+if [ $# -ne 2 ]; then
+    echo "Usage: $0 <mysql_username> <mysql_password>"
+    exit 1
+fi
+
+MYSQL_USER="$1"
+MYSQL_PASSWORD="$2"
 
 # Set the directory containing SQL files
 SQL_DIR="./backups"

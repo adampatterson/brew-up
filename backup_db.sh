@@ -1,17 +1,19 @@
 #!/bin/bash
 # chmod +x backup_db.sh
 
-MYSQL_USER="root"
-MYSQL_PASSWORD="root"
+# Check if username and password are provided
+if [ $# -ne 2 ]; then
+    echo "Usage: $0 <mysql_username> <mysql_password>"
+    exit 1
+fi
 
-# Get today's date in YYYY-MM-DD format
-# TODAY=$(date +%Y-%m-%d)
+MYSQL_USER="$1"
+MYSQL_PASSWORD="$2"
 
-# Create a directory with today's date
-# mkdir -p "$TODAY"
+# Create a directory for backups
 mkdir -p "backups"
 
 # Loop through all databases and create backups in the directory
-for I in $(mysql  -u "$MYSQL_USER" -p"$MYSQL_PASSWORD" -e 'show databases' -s --skip-column-names); do
-    mysqldump  -u "$MYSQL_USER" -p"$MYSQL_PASSWORD" "$I" | gzip > "./backups/$I.sql.gz"
+for I in $(mysql -u "$MYSQL_USER" -p"$MYSQL_PASSWORD" -e 'show databases' -s --skip-column-names); do
+    mysqldump -u "$MYSQL_USER" -p"$MYSQL_PASSWORD" "$I" | gzip > "./backups/$I.sql.gz"
 done
