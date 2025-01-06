@@ -13,7 +13,7 @@ Both export an import will assume your username and password are both `root`. Ch
 ## Export Existing Databases
 
 ```shell
-./backup_db.sh
+./backup_db.sh username password
 ```
 
 This will create a folder `/backups` with a compressed database backup file matching the table name.
@@ -50,7 +50,7 @@ or .ssh configs._
 Before you import everything, confirm that all the files in `/backups` should be imported.
 
 ```shell
-./import_db.sh
+./import_db.sh username password
 ```
 
 ## Export DB Connections
