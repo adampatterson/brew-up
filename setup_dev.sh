@@ -27,7 +27,9 @@ brew install tree
 brew install logrotate
 brew install htop
 brew install cloudflared
-brew install warp
 brew install wp-cli
+
+# Applications
+brew install warp
 brew install --cask raycast
 brew install --cask rectangle
