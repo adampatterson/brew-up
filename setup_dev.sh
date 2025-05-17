@@ -23,6 +23,7 @@ brew install node
 brew install nvm
 
 # Nice to have
+brew install mailhog
 brew install tree
 brew install logrotate
 brew install htop
