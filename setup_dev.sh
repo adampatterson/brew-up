@@ -28,14 +28,17 @@ brew install nvm
 
 # Nice to have
 brew install rclone
+brew install mailhog
 brew install awscli
 brew install tree
 brew install gpg
 brew install logrotate
 brew install htop
 brew install cloudflared
+brew install wp-cli
+
+# Applications
 brew install warp
 brew install act
-brew install wp-cli
 brew install --cask raycast
 brew install --cask rectangle
